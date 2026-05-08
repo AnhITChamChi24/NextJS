@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
+import { ThemeToggle } from "./theme-toggle";
 
 export default function Navbar() {
   return (
@@ -12,7 +13,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="flex items-center gap-2 px-12 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex-1 max-w-md mx-auto">
+      <div className="flex items-center font-bold gap-2 px-12 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 flex-1 max-w-md mx-auto">
         <Link className={buttonVariants({ variant: "ghost" })} href="/">
           Trang chủ
         </Link>
@@ -31,12 +32,13 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center flex-1 justify-end">
-        <Link className={buttonVariants()} href="">
+        <Link className={buttonVariants()} href="/auth/sign-in">
           Đăng nhập
         </Link>
-        <Link className={buttonVariants({ variant: "outline" })} href="">
+        <Link className={buttonVariants({ variant: "outline" })} href="/auth/sign-up">
           Đăng ký
         </Link>
+        <ThemeToggle />
       </div>
     </nav>
   );
